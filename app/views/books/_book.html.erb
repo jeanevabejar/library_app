@@ -1,4 +1,4 @@
-<div id="<%= dom_id book %>">
+<div>
   <p>
     <strong>Title:</strong>
     <%= book.title %>
@@ -9,9 +9,29 @@
     <%= book.author %>
   </p>
 
-  <p>
+<% if book.genre.present?  %>
+ <p>
+    <strong>Genre:</strong>
+    <%= book.genre %>
+  </p>
+<%end %>
+
+
+<% if book.link.present? %>
+   <p>
+    <strong>Link:</strong>
+    <%= book.link if book.link.present? %>
+  </p>
+<% end %>
+
+
+<% if book.content.present? %>
+   <p>
     <strong>Content:</strong>
     <%= book.content %>
   </p>
+<% end %>
+
+ 
 
 </div>

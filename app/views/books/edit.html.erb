@@ -1,10 +1,17 @@
-<h1>Editing book</h1>
-
-<%= render "form", book: @book %>
-
-<br>
-
-<div>
-  <%= link_to "Show this book", @book %> |
-  <%= link_to "Back to books", books_path %>
+<div class="default-size border-4 display-format flex-col gap-4 ">
+  <div class=" flex flex-row items-center w-5/6 h-5/6 border-4 border-dashed border-blue-300 rounded-xl">
+<div class="w-[50%] h-[81vh]  bg-create-img bg-cover  bg-no-repeat bg-center rounded-lg"></div>
+  <%= render "form", book: @book %>
+  </div>
+<div class="flex flex-row gap-4">
+   <div class="btn-style display-format">
+    <%= link_to "Back to books", books_path %>
+  </div>
+  <div class="btn-style display-format">
+  <%= link_to "Show this book", @book %> 
 </div>
+</div>
+ 
+</div>
+
+

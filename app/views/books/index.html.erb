@@ -1,20 +1,24 @@
-<div class="">
- <h1 class="text-7xl font-semibold uppercase p-4">Library App</h1> <div class="p-4 bg-sky-400 text-2xl">
-     <%= link_to "New book", new_book_path %>
+<div class="flex flex-wrap justify-center ">
+  <h1 class="header ">
+    TheBookmark
+  </h1>
+  <div class=" w-56 h-20 text-3xl fixed border-8 border-dashed border-blue-300 right-0 text-center -rotate-90 my-56 -mr-24 font-customFont text-blue-300 rounded-lg hover:bg-blue-300 hover:text-white">
+    <%= link_to "Add bookmark", new_book_path %>
   </div>
- 
-
-<div id="books" class=" max-h-50 min-w-full p-6">
-  <% @books.each do |book| %>
-  <div class="border border-blue-950 border-solid min-h-80 max-h-80 max-w-xs min-w-xs"></div>
-    <%= render book %>
-    <p>
-      <%= link_to "Show this book", book %>
-    </p>
-    <br>
-  <% end %>
-</div>
-
-
-
+  <div id="books" class=" default-size p-6 flex flex-row flex-wrap gap-16">
+    <% @books.each do |book| %>
+      <div class=" flex flex-col p-10  max-w-96 ">
+        <div class="border-2 border-gray-300 border-dotted min-h-[25rem] max-h-[25rem] max-w-[20rem] min-w-[20rem] display-format">
+            <%= image_tag(book.cover, class: "w-screen h-96 hover:rotate-6") %>
+        </div>
+        <h1 class="truncate"><strong>Title:</strong> <%=book.title %></h1>
+        <h1><strong>Author:</strong> <%=book.author %></h1>
+        <h1 class="truncate"><strong>Content:</strong>
+          <%=book.content %></h1>
+        <button class=" btn-style">
+          <%= link_to "Show this book", book %>
+        </button>
+      </div>
+    <% end %>
+  </div>
 </div>
