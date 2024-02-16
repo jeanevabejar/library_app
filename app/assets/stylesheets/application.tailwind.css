@@ -41,7 +41,8 @@
   }
 
   .header {
-    @apply text-7xl font-semibold uppercase pt-16 pb-4 font-customFont text-blue-300 border-b-8 border-dashed;
+    font-size: clamp(5rem, 9vw, 9rem);
+    @apply font-semibold uppercase pt-16 pb-4 font-customFont text-blue-300 border-b-8 border-dashed;
   }
   
 }

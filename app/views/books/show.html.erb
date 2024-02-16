@@ -1,9 +1,17 @@
-<div class="w-[80%] h-[80vh] border-8 border-blue-300 border-dashed display-format flex-row gap-4">
-  <p style="color: green"><%= notice %></p>
-  <div class="border-2 border-gray-300 border-dotted w-[30%]  h-[60vh]">
-    <%= image_tag(@book.cover, class:"w-screen h-[60vh] hover:rotate-6") %>
+<div class="w-[80%] h-[80vh] border-8 border-blue-300 border-dashed display-format flex-row">
+
+  <div class="display-format flex-col  min-w-[50%] h-[80vh] gap-4">
+    <% flash.each do |type,msg| %>
+      <p class="border-4 border-dashed border-green-300 h-[2rem] w-[20rem] rounded-md display-format text-green-500">
+        <%= msg %>
+      </p>
+    <% end %>
+    <div class="border-2 border-gray-300 border-dotted min-w-[40%] max-w-[50%]  h-[60vh]">
+      <%= image_tag(@book.cover, class:"w-screen h-[60vh] hover:rotate-6") %>
+    </div>
   </div>
-  <div class="w-[50%] h-[80vh] display-format flex-col text-2xl text-blue-300">
+
+  <div class="  min-w-[50%] h-[80vh] display-format flex-col text-2xl text-blue-400 p-12 text-justify">
     <%= render @book %>
     <div class="w-[25rem] h-[5rem] display-format gap-4">
       <button class="btn-style text-base">
@@ -11,8 +19,9 @@
       </button>
       <button class="btn-style text-base">
         <%= link_to "Back to books", books_path %>
-        </button>
+      </button>
     </div>
+
     <%= button_to "Destroy this book", @book, method: :delete, class:"btn-style text-base" %>
   </div>
 </div>
