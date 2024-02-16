@@ -1,0 +1,20 @@
+<div class="">
+ <h1 class="text-7xl font-semibold uppercase p-4">Library App</h1> <div class="p-4 bg-sky-400 text-2xl">
+     <%= link_to "New book", new_book_path %>
+  </div>
+ 
+
+<div id="books" class=" max-h-50 min-w-full p-6">
+  <% @books.each do |book| %>
+  <div class="border border-blue-950 border-solid min-h-80 max-h-80 max-w-xs min-w-xs"></div>
+    <%= render book %>
+    <p>
+      <%= link_to "Show this book", book %>
+    </p>
+    <br>
+  <% end %>
+</div>
+
+
+
+</div>
