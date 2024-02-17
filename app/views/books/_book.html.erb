@@ -1,5 +1,5 @@
-<div>
-  <p>
+<div class="flex flex-col max-w-[100%]">
+  <p class="flex flex-wrap">
     <strong>Title:</strong>
     <%= book.title %>
   </p>
@@ -18,9 +18,9 @@
 
 
 <% if book.link.present? %>
-   <p>
+   <p class=" truncate">
     <strong>Link:</strong>
-    <%= book.link if book.link.present? %>
+    <%= book.link %>
   </p>
 <% end %>
 
