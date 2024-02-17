@@ -1,11 +1,11 @@
-<div class="min-w-[50%] h-[80vh] flex-col gap-4 p-4 display-format">
+<div class="min-w-[50%] h-[80vh] flex-col gap-2 p-4 display-format">
   <%= form_with(model: book) do |form| %>
   <% if book.errors.any? %>
-    <div style="color: red">
+    <div class="text-red-400 text-xs ">
 
       <ul>
         <% book.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li class="border-4 border-dashed border-red-500"><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
