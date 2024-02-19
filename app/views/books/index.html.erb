@@ -9,7 +9,12 @@
     <% @books.each do |book| %>
       <div class=" flex flex-col p-4  max-w-96  max-h-[75vh]  ">
         <div class="border-2 border-gray-300 border-dotted min-h-[25rem] max-h-[25rem] max-w-[20rem] min-w-[20rem] display-format">
-            <%= image_tag(book.cover, class: "w-screen h-96 hover:rotate-6") %>
+           <% if book.cover.present? && book.cover =~ URI::DEFAULT_PARSER.make_regexp %>
+  <%= image_tag(book.cover, class: "w-screen h-96 hover:rotate-6") %>
+<% else %>
+  <%= image_tag(asset_path('No-Image-Placeholder.svg.png'), class: "w-screen h-96 hover:rotate-6") %>
+<% end %>
+
         </div>
         <h1 class="truncate"><strong>Title:</strong> <%=book.title %></h1>
         <h1><strong>Author:</strong> <%=book.author %></h1>
