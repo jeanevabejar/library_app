@@ -7,7 +7,7 @@
       </p>
     <% end %>
     <div class="border-2 border-gray-300 border-dotted min-w-[40%] max-w-[50%]  h-[60vh]">
-      <% if @book.cover.present? && @book.cover =~ URI::DEFAULT_PARSER.make_regexp %>
+      <% if @book.cover.present? && /https:/.match(@book.cover)  %>
   <%= image_tag(@book.cover, class: "w-screen h-96 hover:rotate-6") %>
 <% else %>
   <%= image_tag(asset_path('No-Image-Placeholder.svg.png'), class: "w-screen h-96 hover:rotate-6") %>
